@@ -13,13 +13,13 @@
     <div id="app">
         <h1>Titolo</h1>
 
-        <input type="text">
-        <button type="button">Add</button>
+        <input v-model="text" :class="text" type="text">
+        <button @click="addNewMess" type="button">Add</button>
 
         <ul>
-            <li class="line">ciao <i class="fa-solid fa-trash-can"></i></li>
-            <li>ciao <i class="fa-solid fa-trash-can"></i></li>
-            <li>ciao <i class="fa-solid fa-trash-can"></i></li>
+         
+            <li v-for="sting in array">{{text}}<i @click="deleteMess" :class="text" class="fa-solid fa-trash-can"></i></li>
+            
         </ul>
 
 
