@@ -25,33 +25,36 @@ invertire il valore della proprietà done del todo corrispondente
 
 */
 
-const {createApp} = Vue;
+const { createApp } = Vue;
 
-    createApp({
-        data(){
-            return {
+createApp({
+    data() {
+        return {
+            text: '',
+            done: false,
+            array: [],
+        }
+    },
+    methods: {
+        deleteMess(index) {
+          
+            //console.log('hey');
+            this.array.splice(index, 1);
+
+        },
+
+        addNewMess() {
+            const newMess = {
                 text: '',
-                array: [],
-            }
-        },
-        methods: {
 
-            addNewMess(){
-               const newMess = {
-                    text: ''
-               }
-               this.array.push(newMess);
-               
-               this.newMess = '';
-            },
-
-            deleteMess(){
-            const delMess =  {
-                array: [],
-            };
-            this.delMess.splice(i, 1);
             }
+            this.array.push(newMess);
+            console.log(this.array);
+
+            this.newMess = '';
         },
 
-    }).mount('#app')
+    },
+
+}).mount('#app')
 
